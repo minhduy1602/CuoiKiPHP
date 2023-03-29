@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 14, 2023 lúc 05:02 AM
+-- Thời gian đã tạo: Th3 29, 2023 lúc 01:17 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.1.12
 
@@ -114,7 +114,10 @@ INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
 (13, 2, 'in process', '?ang trên ???ng g?i ', '2023-03-09 18:09:56'),
 (14, 2, 'closed', 'finis', '2023-03-09 18:10:28'),
 (15, 11, 'in process', '123123', '2023-03-12 01:54:57'),
-(16, 11, 'in process', '123123', '2023-03-12 01:55:04');
+(16, 11, 'in process', '123123', '2023-03-12 01:55:04'),
+(17, 17, 'in process', 'ád', '2023-03-21 14:48:19'),
+(18, 15, 'closed', 'da giao thanh cong', '2023-03-21 14:49:06'),
+(19, 14, 'rejected', 'khach da huy don hang', '2023-03-21 14:49:31');
 
 -- --------------------------------------------------------
 
@@ -142,10 +145,10 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
-(1, 1, 'North Street Tavern', 'nthavern@mail.com', '3547854700', 'www.northstreettavern.com', '8am', '8pm', 'mon-sat', '1128 North St, White Plains', '6290877b473ce.jpg', '2023-03-10 08:10:35'),
-(2, 2, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '11am', '9pm', 'Mon-Sat', '800 Boylston St, Boston', '606d720b5fc71.jpg', '2023-03-10 08:06:41'),
-(3, 3, 'Nan Xiang Xiao Long Bao', 'nanxiangbao45@mail.com', '1458745855', 'www.nanxiangbao45.com', '9am', '8pm', 'mon-sat', 'Queens, New York', '6290860e72d1e.jpg', '2023-03-10 08:04:30'),
-(4, 4, 'Highlands Bar & Grill', 'hbg@mail.com', '6545687458', 'www.hbg.com', '7am', '8pm', 'mon-sat', '812 Walter Street', '6290af6f81887.jpg', '2023-03-10 11:01:03');
+(1, 3, 'North Street Tavern', 'nthavern@mail.com', '3547854700', 'www.northstreettavern.com', '7am', '8pm', 'mon-fri', '  Quan 2, Tp Ho Chi Minh  ', '6419c1be9cdbd.jpg', '2023-03-21 14:39:58'),
+(2, 2, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '8am', '8pm', 'mon-sat', 'Quan 10, Tp Ho Chi Minh', '6419c2460d850.jpg', '2023-03-21 14:42:14'),
+(3, 1, 'Nan Xiang Xiao Long Bao', 'nanxiangbao45@mail.com', '1458745855', 'www.nanxiangbao45.com', '7am', '8pm', 'mon-sat', 'Binh Thanh, Tp Ho Chi Minh', '6419c210310f6.jpg', '2023-03-21 14:41:20'),
+(4, 4, 'Highlands Bar & Grill', 'hbg@mail.com', '6545687458', 'www.hbg.com', '7am', '8pm', '24hr-x7', 'Quan 1, Tp Ho Chi Minh', '6419c2c581e1f.jpg', '2023-03-21 14:44:21');
 
 -- --------------------------------------------------------
 
@@ -164,10 +167,10 @@ CREATE TABLE `res_category` (
 --
 
 INSERT INTO `res_category` (`c_id`, `c_name`, `date`) VALUES
-(1, 'Continental', '2023-03-10 08:07:35'),
-(2, 'Italian', '2023-03-10 08:45:23'),
-(3, 'Chinese', '2023-03-10 08:45:25'),
-(4, 'American', '2023-03-10 08:45:28');
+(1, 'Binh Thanh', '2023-03-21 14:38:22'),
+(2, 'Quan 10', '2023-03-21 14:38:14'),
+(3, 'Quan 2', '2023-03-21 14:38:06'),
+(4, 'Quan 1', '2023-03-21 14:37:55');
 
 -- --------------------------------------------------------
 
@@ -193,13 +196,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `password`, `address`, `status`, `date`) VALUES
-(1, 'erict', 'Eric', 'Lopez', 'eric@mail.com', '1458965547', 'a32de55ffd7a9c4101a0c5c8788b38ed', '87 Armbrester Drive', 1, '2023-03-09 17:57:13'),
-(2, 'harrye', 'Harry', 'Holt', 'harryh@mail.com', '3578545458', 'bc28715006af20d0e961afd053a984d9', '33 Stadium Drive', 1, '2023-03-09 17:57:25'),
-(3, 'jamess', 'James', 'Duncan', 'james@mail.com', '0258545696', '58b2318af54435138065ee13dd8bea16', '67 Hiney Road', 1, '2023-03-09 17:57:33'),
-(4, 'christine', 'Christine', 'Moores', 'christine@mail.com', '7412580010', '5f4dcc3b5aa765d61d8327deb882cf99', '114 Test Address', 1, '2023-03-09 17:57:50'),
-(5, 'scotts', 'Scott', 'Miller', 'scott@mail.com', '7896547850', '5f4dcc3b5aa765d61d8327deb882cf99', '63 Charack Road', 1, '2023-03-09 17:58:03'),
-(6, 'liamoore', 'Liam', 'More', 'liamoore@mail.com', '7896969696', '5f4dcc3b5aa765d61d8327deb882cf99', '122 Bleck Street', 1, '2023-03-09 17:58:15'),
-(7, 'minhduy', 'Duy', 'Le', 'minhduy@gmail.com', '0123456789', '25f9e794323b453885f5181f1b624d0b', 'Chung c? C6,???ng Man Thi?n, T?ng Nh?n Phú A, Qu?n 9 ', 1, '2023-03-02 14:30:01');
+(7, 'minhduy', 'Duy', 'Le', 'minhduy@gmail.com', '0123456789', '25f9e794323b453885f5181f1b624d0b', 'Chung c? C6,???ng Man Thi?n, T?ng Nh?n Phú A, Qu?n 9 ', 1, '2023-03-02 14:30:01'),
+(8, 'truonggiang', 'Giang', 'Truong', 'truonggian2403@gmail.com', '0919083376', '25f9e794323b453885f5181f1b624d0b', 'Binh Thanh, Tp Ho Chi Minh', 1, '2023-03-21 14:26:07'),
+(9, 'quochao', 'Hao', 'Quoc', 'quochao3004@gmail.com', '01234706599', '25f9e794323b453885f5181f1b624d0b', 'Quan 4, Tp Ho Chi Minh', 1, '2023-03-21 14:27:21'),
+(10, 'namgiao', 'Giao', 'Nam', 'namgiao2107@gmail.com', '0234566345', '25f9e794323b453885f5181f1b624d0b', 'Quan 2, Tp Ho Chi Minh', 1, '2023-03-21 14:29:15');
 
 -- --------------------------------------------------------
 
@@ -232,7 +232,13 @@ INSERT INTO `users_orders` (`o_id`, `u_id`, `title`, `quantity`, `price`, `statu
 (8, 6, 'Lobster Thermidor', 1, '36.00', 'closed', '2023-03-09 18:00:59'),
 (9, 6, 'Stuffed Jacket Potatoes', 1, '8.00', 'rejected', '2023-03-09 18:01:11'),
 (10, 7, 'Prawn Crackers', 1, '7.00', NULL, '2023-03-12 01:53:40'),
-(11, 7, 'Spring Rolls', 1, '6.00', 'in process', '2023-03-12 01:54:57');
+(11, 7, 'Spring Rolls', 1, '6.00', 'in process', '2023-03-12 01:54:57'),
+(12, 10, 'Yorkshire Lamb Patties', 1, '14.00', NULL, '2023-03-21 14:45:36'),
+(13, 10, 'Lobster Thermidor', 1, '36.00', NULL, '2023-03-21 14:45:36'),
+(14, 8, 'Pink Spaghetti Gamberoni', 1, '21.00', 'rejected', '2023-03-21 14:49:31'),
+(15, 8, 'Crispy Chicken Strips', 1, '8.00', 'closed', '2023-03-21 14:49:06'),
+(17, 9, 'Spring Rolls', 1, '6.00', 'in process', '2023-03-21 14:48:19'),
+(18, 7, 'Yorkshire Lamb Patties', 1, '14.00', NULL, '2023-03-29 11:09:38');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -300,7 +306,7 @@ ALTER TABLE `dishes`
 -- AUTO_INCREMENT cho bảng `remark`
 --
 ALTER TABLE `remark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `restaurant`
@@ -318,13 +324,13 @@ ALTER TABLE `res_category`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `u_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `users_orders`
 --
 ALTER TABLE `users_orders`
-  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `o_id` int(222) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
